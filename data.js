@@ -31,6 +31,26 @@ window.franklinProducts = [
     amazonUrl: "https://link.amazon/B05Y2GJgZ",
     videoId: "uxFbVgq2GLc",
     videoTitle: "Lawrence Washington had NO idea what was on his wrist! 😱 #shorts"
+  },
+  {
+    id: "franklin-godiva-chocolates-27count",
+    category: "snack",
+    tag: "SECRET TREATS",
+    title: "Godiva Premium Assorted Chocolates, 27-count",
+    searchTerms: "godiva premium assorted chocolates 27-count chocolate gift box 巧克力 禮盒 甜點 喬治華盛頓 franklin",
+    amazonUrl: "https://link.amazon/B07ondIj6",
+    videoId: "xeGjL63OMKU",
+    videoTitle: "Did George eat the whole box of chocolates he had prepared for his brother?"
+  },
+  {
+    id: "franklin-nortiv8-tactical-work-boots",
+    category: "apparel",
+    tag: "TACTICAL GEAR",
+    title: "NORTIV 8 Men's Military Tactical Work Boots",
+    searchTerms: "nortiv 8 tactical boots military work boots secret weapon 戰術靴 軍靴 工作靴 lawrence washington franklin",
+    amazonUrl: "https://link.amazon/B00HGC5RX",
+    videoId: "VHOD_kviJH0",
+    videoTitle: "The SECRET weapon George Washington gave his brother... 👀"
   }
 ];
 
