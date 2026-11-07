@@ -782,8 +782,8 @@
     </div>
   </div>
 
-  <!-- 引入外部資料庫（更新為 ./data.js 並加上 defer） -->
-  <script src="./data.js?v=20261107_v4" defer></script>
+  <!-- 引入外部資料庫（時間戳破除快取） -->
+  <script src="./data.js?v=20261107_v5"></script>
 
   <script>
     const catQuotesData = {
@@ -876,7 +876,7 @@
         "君が僕を動かしたんじゃない。僕がたまたまそっちに行きたかっただけだ。",
         "寒いな。ヒーターを強くしろ。僕が冷えたらこの家の運気は終わりだ。",
         "冷たいんじゃない。人間の無駄なテンションに付き合うのが面倒なだけだ。",
-        "疲れた顔をしてるな？いいから僕のトイレを掃除して気分転換でもしろ。",
+        "疲れた顔をしてるな？いいから僕のトイレを掃除して気分轉換でもしろ。",
         "たとえワシントンが偉くなろうと、この部屋の頂点は僕だ。",
         "壁を見つめているのは幽霊がいるからじゃない。君の顔を見たくないだけだ。",
         "写真を撮るのか？肖像權料はフリーズドライのササミ1本だ。",
@@ -1017,7 +1017,12 @@
 
     function setCategory(cat, el) {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      if (el) el.classList.add('active');
+      if (el) {
+        el.classList.add('active');
+      } else {
+        const targetTab = document.querySelector(`.tab[data-cat="${cat}"]`);
+        if (targetTab) targetTab.classList.add('active');
+      }
       currentCategory = cat;
       renderCards(true);
     }
@@ -1156,6 +1161,7 @@
 
       // 初始化語系與商品列表
       switchLanguage('en');
+      setCategory('all');
     }
 
     if (document.readyState === 'loading') {
