@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAT & WASHINGTON - Franklin's Daily Life Hacks & American Skits</title>
-  
-  <!-- 水藍底白字立體 C Favicon (純向量 SVG) -->
+  <title>CAT & WASHINGTON - 富蘭克林的日常智慧與美式生活好物</title>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='cyanGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2367e8f9'/%3E%3Cstop offset='40%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23cyanGrad)'/%3E%3Cpath d='M68 34 C64 26 56 22 46 22 C30 22 20 34 20 50 C20 66 30 78 46 78 C56 78 64 74 68 66 L56 59 C53 64 49 66 45 66 C36 66 32 58 32 50 C32 42 36 34 45 34 C49 34 53 36 56 41 Z' fill='%23ffffff'/%3E%3C/svg%3E">
 
+  <!-- Google Font: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       --bg: #f8fafc;
@@ -19,12 +20,21 @@
       --card-border: #e2e8f0;
       --primary: #0284c7;
       --primary-light: #e0f2fe;
+      --primary-focus: #0369a1;
       --text-main: #0f172a;
       --text-sub: #64748b;
       --btn-bg: #f59e0b;
       --btn-hover: #d97706;
+      --tag-bg: #e0f2fe;
+      --tag-text: #0284c7;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg);
@@ -33,118 +43,131 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 16px 80px 16px;
+      padding: 28px 16px 80px 16px;
     }
 
+    /* 頂部語言切換膠囊 */
     .lang-switcher {
-      display: flex;
-      gap: 6px;
+      display: inline-flex;
+      gap: 4px;
       background: #e2e8f0;
       padding: 4px;
       border-radius: 9999px;
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
+
     .lang-btn {
       border: none;
       background: transparent;
       color: #64748b;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
-      padding: 5px 14px;
+      padding: 6px 14px;
       border-radius: 9999px;
       cursor: pointer;
       transition: all 0.2s ease;
     }
+
     .lang-btn.active {
       background: #ffffff;
       color: var(--primary);
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
 
+    /* 首頁頭部與標題區 */
     .header {
       text-align: center;
       max-width: 680px;
-      margin-bottom: 32px;
       width: 100%;
+      margin-bottom: 28px;
     }
-    .title {
-      font-size: 32px;
+
+    .site-title {
+      font-size: 38px;
       font-weight: 800;
       letter-spacing: -0.5px;
-      color: var(--text-main);
-      margin-bottom: 4px;
+      color: #0f172a;
+      margin-bottom: 6px;
     }
-    .slogan {
+
+    .site-slogan {
       font-size: 15px;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: 16px;
-      line-height: 1.4;
+      margin-bottom: 22px;
+      line-height: 1.5;
     }
 
-    .cat-dialog-box {
+    /* 傲嬌富蘭克林對話框 */
+    .dialog-box {
       width: 100%;
       background: #ffffff;
       border: 2px solid #bae6fd;
-      border-radius: 20px;
-      padding: 18px 22px;
+      border-radius: 24px;
+      padding: 18px 24px;
       display: flex;
       align-items: center;
-      gap: 20px;
-      box-shadow: 0 8px 24px -6px rgba(2, 132, 199, 0.1);
-      margin-bottom: 16px;
+      gap: 24px;
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.08);
+      margin-bottom: 20px;
       text-align: left;
     }
-    .cat-box-img-wrap {
+
+    .dialog-img-wrap {
       flex-shrink: 0;
-      width: 140px;
+      width: 150px;
     }
-    .cat-box-img {
+
+    .dialog-img {
       width: 100%;
       height: auto;
       display: block;
       object-fit: contain;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06));
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.06));
     }
-    .cat-box-text-wrap {
+
+    .dialog-text-wrap {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
-    .cat-box-tag {
+
+    .dialog-badge {
       font-size: 11.5px;
       font-weight: 800;
-      color: #0284c7;
-      background: #e0f2fe;
-      padding: 3px 10px;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 12px;
       border-radius: 9999px;
       align-self: flex-start;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
     }
-    .cat-box-quote {
-      font-size: 15px;
+
+    .dialog-quote {
+      font-size: 15.5px;
       font-weight: 700;
-      color: var(--text-main);
+      color: #0f172a;
       line-height: 1.55;
     }
 
     @media (max-width: 600px) {
-      .cat-dialog-box {
+      .dialog-box {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 16px;
-        gap: 12px;
+        padding: 18px 16px;
+        gap: 14px;
       }
-      .cat-box-img-wrap { width: 120px; }
-      .cat-box-tag { align-self: center; }
+      .dialog-img-wrap { width: 130px; }
+      .dialog-badge { align-self: center; }
     }
 
-    .bio {
+    .site-bio {
       color: var(--text-sub);
       font-size: 13.5px;
-      line-height: 1.6;
+      line-height: 1.65;
+      margin-bottom: 16px;
     }
 
     .social-links {
@@ -152,13 +175,13 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin-top: 14px;
     }
+
     .social-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 7px 16px;
+      padding: 7px 18px;
       background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: 9999px;
@@ -166,9 +189,10 @@
       font-weight: 700;
       color: var(--text-main);
       text-decoration: none;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
       transition: all 0.2s ease;
     }
+
     .social-pill:hover {
       background: var(--primary-light);
       border-color: var(--primary);
@@ -176,178 +200,161 @@
       transform: translateY(-1px);
     }
 
-    .section-divider {
+    /* 中間市集區域 */
+    .market-section {
       width: 100%;
-      max-width: 940px;
-      text-align: center;
-      margin-bottom: 16px;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
     }
-    .section-title {
-      font-size: 20px;
+
+    .market-title {
+      font-size: 22px;
       font-weight: 800;
       color: var(--text-main);
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
+      margin-bottom: 6px;
     }
-    .section-title::before, .section-title::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: #e2e8f0;
-      max-width: 120px;
-    }
-    .section-desc-note {
+
+    .market-subtitle {
       font-size: 13.5px;
       color: var(--text-sub);
-      margin-top: 6px;
+      margin-bottom: 20px;
     }
 
     .search-box {
       width: 100%;
-      max-width: 540px;
-      margin-bottom: 18px;
+      max-width: 580px;
+      margin-bottom: 22px;
     }
+
     .search-input {
       width: 100%;
-      padding: 13px 20px;
+      padding: 13px 22px;
       border-radius: 9999px;
       border: 1.5px solid var(--card-border);
       background: var(--card-bg);
       color: var(--text-main);
       font-size: 14.5px;
       outline: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
       transition: all 0.2s ease;
     }
+
     .search-input:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
     }
 
-    .filter-tabs {
+    .tabs-wrapper {
       display: flex;
       gap: 8px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
       flex-wrap: wrap;
       justify-content: center;
     }
-    .tab {
+
+    .tab-btn {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       color: var(--text-sub);
-      padding: 7px 18px;
+      padding: 8px 18px;
       border-radius: 9999px;
       font-size: 13.5px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
       transition: all 0.2s ease;
     }
-    .tab.active, .tab:hover {
+
+    .tab-btn.active, .tab-btn:hover {
       background: var(--primary);
       border-color: var(--primary);
       color: #ffffff;
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
     }
 
+    /* 商品卡片 Grid */
     .market-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 22px;
       width: 100%;
-      max-width: 940px;
-    }
-
-    .load-more-wrap {
-      width: 100%;
-      max-width: 940px;
-      text-align: center;
-      margin-top: 30px;
-    }
-    .load-more-btn {
-      background: #ffffff;
-      border: 1.5px solid var(--primary);
-      color: var(--primary);
-      padding: 10px 24px;
-      border-radius: 9999px;
-      font-size: 14.5px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
-      transition: all 0.2s ease;
-    }
-    .load-more-btn:hover {
-      background: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
     }
 
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     .card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08);
       border-color: #cbd5e1;
     }
-    .card-content {
-      padding: 16px;
+
+    .card-body {
+      padding: 20px 18px 14px 18px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
+
     .card-tag {
       display: inline-block;
       align-self: flex-start;
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--primary);
       background: var(--primary-light);
-      padding: 3px 8px;
+      padding: 4px 9px;
       border-radius: 6px;
-      margin-bottom: 8px;
-    }
-    .card-title {
-      font-size: 14.5px;
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.4;
       margin-bottom: 10px;
     }
 
-    .card-video-title {
+    .card-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .card-video-box {
       display: flex;
       align-items: flex-start;
-      gap: 6px;
+      gap: 7px;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 8px 10px;
+      border-radius: 10px;
+      padding: 8px 12px;
       margin-top: auto;
       margin-bottom: 12px;
       font-size: 12px;
-      line-height: 1.4;
+      line-height: 1.45;
       color: #475569;
-      text-align: left;
     }
-    .card-video-title .video-icon {
+
+    .card-video-box .v-icon {
       font-size: 13px;
       flex-shrink: 0;
       margin-top: 1px;
     }
-    .card-video-title .video-text {
+
+    .card-video-box .v-text {
       font-weight: 600;
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -356,13 +363,14 @@
       word-break: break-word;
     }
 
-    .card-action-wrap {
+    .card-footer {
       display: flex;
       flex-direction: column;
       gap: 8px;
-      padding: 0 16px 16px 16px;
+      padding: 0 18px 18px 18px;
     }
-    .story-btn {
+
+    .btn-watch-skit {
       width: 100%;
       background: #f1f5f9;
       color: #0f172a;
@@ -378,8 +386,12 @@
       gap: 6px;
       transition: all 0.2s ease;
     }
-    .story-btn:hover { background: #e2e8f0; }
-    .card-btn {
+
+    .btn-watch-skit:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-buy-amazon {
       display: block;
       text-align: center;
       background: var(--btn-bg);
@@ -392,183 +404,37 @@
       box-shadow: 0 3px 10px rgba(245, 158, 11, 0.2);
       transition: background 0.2s;
     }
-    .card-btn:hover { background: var(--btn-hover); }
 
-    .bottom-section {
-      width: 100%;
-      max-width: 940px;
-      margin-top: 45px;
-      background: #ffffff;
-      border: 2px solid #bae6fd;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.05);
-    }
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-      gap: 8px;
-    }
-    .section-heading-title {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-    .section-sub {
-      font-size: 13.5px;
-      color: var(--text-sub);
+    .btn-buy-amazon:hover {
+      background: var(--btn-hover);
     }
 
-    .hamagm-feature-banner {
-      background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
-      border: 1.5px solid #bbf7d0;
-      border-radius: 20px;
-      padding: 22px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      box-shadow: 0 4px 16px rgba(22, 101, 52, 0.05);
-    }
-    .hamagm-badge {
-      background: #16a34a;
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      padding: 3px 10px;
-      border-radius: 9999px;
-      text-transform: uppercase;
-    }
-    .hamagm-pill {
-      font-size: 12px;
-      font-weight: 700;
-      color: #15803d;
-      background: #dcfce7;
-      padding: 4px 10px;
-      border-radius: 8px;
-    }
-    .hamagm-btn-primary {
-      background: #16a34a;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 13.5px;
-      padding: 10px 20px;
-      border-radius: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 3px 10px rgba(22, 163, 74, 0.25);
-      transition: all 0.2s ease;
-    }
-    .hamagm-btn-primary:hover { background: #15803d; transform: translateY(-1px); }
-
-    .lazylife-feature-banner {
-      background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
-      border: 1.5px solid #bae6fd;
-      border-radius: 20px;
-      padding: 22px 20px;
-      margin-bottom: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.05);
-    }
-    .lazylife-badge {
-      background: #0284c7;
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      padding: 3px 10px;
-      border-radius: 9999px;
-      text-transform: uppercase;
-    }
-    .lazylife-feature-pill {
-      font-size: 12px;
-      font-weight: 700;
-      color: #0369a1;
-      background: #e0f2fe;
-      padding: 4px 10px;
-      border-radius: 8px;
-    }
-    .lazylife-btn-primary {
-      background: #0284c7;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 13px;
-      padding: 9px 18px;
-      border-radius: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
-      transition: all 0.2s ease;
-    }
-    .lazylife-btn-secondary {
-      background: #ffffff;
-      color: #0f172a;
-      border: 1px solid #cbd5e1;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 13px;
-      padding: 9px 16px;
-      border-radius: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .xiaobi-preview-wrap {
-      margin-bottom: 24px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--card-border);
-      background: #0f172a;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    }
-    .video-iframe-wrap {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      width: 100%;
-    }
-    .video-iframe-wrap iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 0;
-    }
-    .video-caption {
-      padding: 10px 14px;
-      background: #f8fafc;
-      border-top: 1px solid var(--card-border);
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-main);
+    .empty-state {
+      grid-column: 1 / -1;
       text-align: center;
+      padding: 40px 16px;
+      color: var(--text-sub);
+      font-size: 14.5px;
     }
 
+    /* 頁尾 */
     .footer {
-      margin-top: 50px;
+      margin-top: 60px;
       text-align: center;
       padding: 24px 16px;
       border-top: 1px solid var(--card-border);
       max-width: 680px;
-    }
-    .affiliate-disclosure {
-      font-size: 13px;
-      color: var(--text-sub);
-      line-height: 1.6;
+      width: 100%;
     }
 
-    .story-modal {
+    .footer-text {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* 影片彈窗 */
+    .modal-overlay {
       display: none;
       position: fixed;
       top: 0; left: 0;
@@ -580,16 +446,17 @@
       justify-content: center;
       padding: 16px;
     }
-    .story-modal-content {
+
+    .modal-inner {
       background: #0f172a;
       border-radius: 20px;
       overflow: hidden;
       width: 100%;
       max-width: 360px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      position: relative;
     }
-    .story-modal-header {
+
+    .modal-header {
       padding: 12px 16px;
       display: flex;
       justify-content: space-between;
@@ -599,19 +466,22 @@
       font-weight: 700;
       background: #1e293b;
     }
-    .story-modal-close {
+
+    .modal-close-btn {
       background: none;
       border: none;
       color: #94a3b8;
       font-size: 24px;
       cursor: pointer;
     }
-    .story-video-wrap {
+
+    .modal-video-wrap {
       position: relative;
       padding-bottom: 177.78%;
       height: 0;
     }
-    .story-video-wrap iframe {
+
+    .modal-video-wrap iframe {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
@@ -621,546 +491,353 @@
 </head>
 <body>
 
-  <!-- 1. 頂部多國語言切換膠囊 -->
+  <!-- 1. 多國語言切換 -->
   <div class="lang-switcher">
-    <button class="lang-btn" data-lang="zh">繁中</button>
-    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn active" data-lang="zh">繁中</button>
+    <button class="lang-btn" data-lang="en">EN</button>
     <button class="lang-btn" data-lang="jp">JP</button>
     <button class="lang-btn" data-lang="de">DE</button>
     <button class="lang-btn" data-lang="fr">FR</button>
   </div>
 
   <!-- 2. 首頁主視覺 -->
-  <div class="header">
-    <h1 class="title">CAT & WASHINGTON</h1>
-    <p class="slogan" id="txtSlogan">🐾 Franklin's Rules: A Snarky Shorthair & George's Everyday Life.</p>
-    
-    <!-- 富蘭克林 傲嬌語錄框 -->
-    <div class="cat-dialog-box">
-      <div class="cat-box-img-wrap">
-        <img src="FCAT.jfif" alt="Franklin the Shorthair" class="cat-box-img" onerror="this.onerror=null; this.src='franklin.jpg';">
+  <header class="header">
+    <h1 class="site-title">CAT & WASHINGTON</h1>
+    <p class="site-slogan" id="txtSlogan">🐾 富蘭克林法則：一隻毒舌美短與華盛頓一家的生活實錄。</p>
+
+    <!-- 貓咪頭像與隨機語錄框 (讀取 FCAT.jfif) -->
+    <div class="dialog-box">
+      <div class="dialog-img-wrap">
+        <img src="FCAT.jfif" alt="Franklin the Cat" class="dialog-img" onerror="this.onerror=null; this.src='FCAT.jpg';">
       </div>
-      <div class="cat-box-text-wrap">
-        <span class="cat-box-tag" id="txtCatBoxTag">😼 富蘭克林的冷眼旁白 (每次重整刷新)</span>
-        <div class="cat-box-quote" id="txtCatQuote">載入中...</div>
+      <div class="dialog-text-wrap">
+        <span class="dialog-badge" id="txtCatBoxTag">😼 貓咪店長悄悄話 (每次重整刷新)</span>
+        <div class="dialog-quote" id="txtCatQuote">載入中...</div>
       </div>
     </div>
 
-    <p class="bio" id="txtBio">
-      🐾 "I don't have an owner. I merely allow the Washingtons to share roof and pantry with me."<br>
-      Dive into the independent life of Franklin the American Shorthair—featuring sharp wit, historical skits, and hand-picked American household upgrades. 👇
+    <p class="site-bio" id="txtBio">
+      🐾「我沒有主人。這間房子是我罩的，華盛頓只是繳房租的。」<br>
+      走進美短富蘭克林的獨立生活！看毒舌短劇、重力學測試與精選美式生活好物。👇
     </p>
-    
+
     <div class="social-links">
       <a href="https://www.youtube.com/@HAMAGM99" target="_blank" rel="noopener noreferrer" class="social-pill">📺 YouTube 系列短劇</a>
       <a href="https://www.instagram.com/dixiliuliu/" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
       <a href="https://www.facebook.com/Hamagm99" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
     </div>
-  </div>
+  </header>
 
-  <!-- 3. 中間市集區 -->
-  <div class="section-divider">
-    <h3 class="section-title" id="txtMarketTitle">🐾 Franklin's Selected Gear</h3>
-    <p class="section-desc-note" id="txtMarketDesc">Practical essentials inspected and approved by Franklin for surviving human chaos.</p>
-  </div>
+  <!-- 3. 市集區域 -->
+  <main class="market-section">
+    <h2 class="market-title" id="txtMarketTitle">🐾 CAT & WASHINGTON 精選好物市集</h2>
+    <p class="market-subtitle" id="txtMarketDesc">精選日常生活、效率提升與紓壓好物，打造無痛生活節奏。</p>
 
-  <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search skits, heaters, cat bowls, survival tools...">
-  </div>
-
-  <div class="filter-tabs" id="filterTabsWrap">
-    <button class="tab active" data-cat="all">All Skits</button>
-    <button class="tab" data-cat="cat">🐱 Cat Survival</button>
-    <button class="tab" data-cat="home">🏠 Territory Living</button>
-    <button class="tab" data-cat="tech">⌨️ Desk Distractions</button>
-    <button class="tab" data-cat="care">🦷 Grooming & Dignity</button>
-    <button class="tab" data-cat="holiday">🎃 Festive Chaos</button>
-  </div>
-
-  <div class="market-grid" id="productGrid"></div>
-
-  <div class="load-more-wrap">
-    <button id="loadMoreBtn" class="load-more-btn">Load More Skits 👇</button>
-  </div>
-
-  <!-- 4. 專區 1：HAMAGM 貓咪官方旗艦站 -->
-  <section class="bottom-section" id="hamagm-hub">
-    <div class="section-header">
-      <h2 class="section-heading-title" id="txtHamagmSectionTitle">🐱 HAMAGM Official Cat Hub</h2>
-      <span class="section-sub" id="txtHamagmSectionSub">(Flagship Store: Ragdoll Hama & Ginger Garna)</span>
+    <div class="search-box">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜尋鍵盤、帽子、圍巾、美容理毛、寵物餵食器...">
     </div>
 
-    <div class="hamagm-feature-banner">
-      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <span class="hamagm-badge" id="txtHamagmBadge">Flagship Partner Hub</span>
-        <h3 style="font-size:17px; font-weight:800; color:var(--text-main);" id="txtHamagmBannerTitle">HAMAGM — Entertainment, Tech & Life Hacks</h3>
-      </div>
-      <p style="font-size:13.5px; color:var(--text-sub); line-height:1.6;" id="txtHamagmBannerDesc">
-        喜歡溫柔軟萌的貓咪日常與全方位的好物市集嗎？造訪 HAMAGM 旗艦站！那裡有布偶母貓「哈瑪」店長與橘貓「嘎瑪」為你帶來更多療癒好物與生活策略。<br>
-        <em>"Ha! Making animals great, and the age a little better."</em>
-      </p>
-      
-      <div style="display:flex; flex-wrap:wrap; gap:8px;">
-        <span class="hamagm-pill" id="hpill1">🐾 趴姿店長貓隨機語錄</span>
-        <span class="hamagm-pill" id="hpill2">⌨️ 科技、生活與寵物多元市集</span>
-        <span class="hamagm-pill" id="hpill3">🎬 完整 YouTube 短影音導購庫</span>
-        <span class="hamagm-pill" id="hpill4">🌏 5 國語言即時支援</span>
-      </div>
-
-      <div style="margin-top:4px;">
-        <a href="https://yanghane1120.github.io/hamagm/" target="_blank" rel="noopener noreferrer" class="hamagm-btn-primary" id="btnHamagmPortal">
-          🌐 前往 HAMAGM 官方旗艦站 ➔
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. 專區 2：小比兔官方筆記本專區 & lazy life. 品牌入口 -->
-  <section class="bottom-section" id="xiaobi-notebooks">
-    <div class="section-header">
-      <h2 class="section-heading-title" id="txtXiaobiSectionTitle">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
-      <span class="section-sub" id="txtXiaobiSectionSub">(Special Guest Appearance & Official Flipbook Series)</span>
+    <!-- 分類 Tab -->
+    <div class="tabs-wrapper" id="tabsWrap">
+      <button class="tab-btn active" data-cat="all">全部商品</button>
+      <button class="tab-btn" data-cat="tech">💻 科技與電競</button>
+      <button class="tab-btn" data-cat="apparel">🧢 服飾與穿戴</button>
+      <button class="tab-btn" data-cat="care">🦷 個人護理</button>
+      <button class="tab-btn" data-cat="cat">🐱 貓咪必備</button>
+      <button class="tab-btn" data-cat="home">🏠 居家生活</button>
+      <button class="tab-btn" data-cat="holiday">🎃 節慶與趣味</button>
+      <button class="tab-btn" data-cat="snack">🍢 點心零食</button>
     </div>
 
-    <div class="lazylife-feature-banner">
-      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <span class="lazylife-badge" id="txtBadge">Official IP Portal</span>
-        <h3 style="font-size:17px; font-weight:800; color:var(--text-main);" id="txtBannerTitle">lazy life. — A Low-Energy World with Xiaobi</h3>
-      </div>
-      <p style="font-size:13.5px; color:var(--text-sub); line-height:1.6;" id="txtBannerDesc">
-        我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的品牌官方入口，集結了桌面陪伴工具、10 秒厭世哲學短劇與實體廢物小誌手帳。<br>
-        <em>"No grand ambitions here—just discovering how to effortlessly devolve into liquid."</em>
-      </p>
-      
-      <div style="display:flex; flex-wrap:wrap; gap:8px;">
-        <span class="lazylife-feature-pill" id="pill1">⏰ 每日躺平時鐘 (Desk Clock)</span>
-        <span class="lazylife-feature-pill" id="pill2">🍅 防內耗番討鐘 (Pomodoro)</span>
-        <span class="lazylife-feature-pill" id="pill3">🃏 40+ 厭世金句抽卡</span>
-        <span class="lazylife-feature-pill" id="pill4">🌏 5 國語言即時切換</span>
-      </div>
+    <!-- 商品列表 Grid -->
+    <div class="market-grid" id="productGrid"></div>
+  </main>
 
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:4px;">
-        <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-primary" id="btnPortal">
-          🌐 訪問 lazy life. 官方入口 ➔
-        </a>
-        <a href="https://yanghane1120.github.io/xiaobi-clock/xiaobi-card/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-secondary" id="btnClock">
-          ⏰ 免費體驗躺平時鐘
-        </a>
-      </div>
-    </div>
-
-    <div class="xiaobi-preview-wrap">
-      <div class="video-iframe-wrap">
-        <iframe 
-          src="https://www.youtube.com/embed/clPbsZ7oYuI?rel=0&loop=1&playlist=clPbsZ7oYuI" 
-          title="Little Rabbit's Notes - Inside Flipbook" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="video-caption" id="txtFlipbookCaption">📖 Inside The Notebook: Physical Flipbook Animation & Page Preview</div>
-    </div>
-  </section>
-
+  <!-- 4. 頁尾 -->
   <footer class="footer">
-    <p class="affiliate-disclosure" id="txtFooter">
-      © CAT & WASHINGTON. All rights reserved.<br>
+    <p class="footer-text" id="txtFooter">
+      CAT & WASHINGTON. All rights reserved.<br>
       As an Amazon Associate I earn from qualifying purchases.
     </p>
   </footer>
 
-  <!-- Shorts 彈窗 -->
-  <div id="storyModal" class="story-modal">
-    <div class="story-modal-content">
-      <div class="story-modal-header">
-        <span id="storyModalTitle">🎬 Franklin's Skit</span>
-        <button class="story-modal-close" id="modalCloseBtn">&times;</button>
+  <!-- 5. Shorts 彈窗播放器 -->
+  <div id="videoModal" class="modal-overlay">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <span id="modalVideoTitle">🎬 觀看貓咪短劇</span>
+        <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
       </div>
-      <div class="story-video-wrap">
-        <iframe id="storyIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="modal-video-wrap">
+        <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
-  <!-- 引入外部資料庫（時間戳破除快取） -->
-  <script src="./data.js?v=20261107_v5"></script>
+  <!-- 引入乾淨外部資料庫 -->
+  <script src="./data.js?v=cw_20261107_v1"></script>
 
+  <!-- 主邏輯腳本 -->
   <script>
-    const catQuotesData = {
+    // 傲嬌富蘭克林多語系語錄
+    const quotesPool = {
       zh: [
+        "喵～你可以慢慢看，但要記得分我一點摸摸的時間喔！",
         "聲明一次：我沒有主人。這間房子是我罩的，華盛頓只是繳房租的。",
         "看什麼看？罐頭開好了沒？沒開好別指望我多看你一眼。",
-        "別把我和那隻只會撒嬌的布偶貓相提並論。本貓靠的是智商。",
         "喬治剛出門，現在是本貓巡視領地、推翻桌上雜物的時間。",
         "人類總是以為自己在豢養我，其實是本貓在救濟你們匱乏的精神世界。",
         "那杯水不是我打翻的，是它自己違反了地心引力法則。",
         "摸兩下是禮貌，摸第三下你就準備付出代價。",
         "如果這世界上有什麼值得我低頭，那一定是放在碗底的新鮮肉泥。",
-        "華盛頓每天忙著工作，卻連魚乾都買不起頂級的，真是替他擔心。",
-        "本貓今日心情普通，允許你遠距離觀賞我的花紋三秒鐘。",
-        "蹭你褲腳不是撒嬌，純粹是我的氣味標記需要補漆了。",
         "又在看螢幕？敲鍵盤能敲出小魚乾嗎？愚蠢的人類。",
-        "別吵，本貓正在進行深刻的哲學思考——比如午餐為什麼還沒來。",
-        "客廳的沙發抓痕是我的現代藝術簽名，請學會欣賞。",
-        "我不喜歡被抱。但我坐在你筆電鍵盤上時，你最好別動。",
-        "叫我的名字不代表我會理你，除非你手裡拿著拆開的零食包裝。",
-        "生活就像箱子，不管多擠，只要我進得去，那就是我的地盤。",
-        "喬治又在嘆氣了，連開罐器都拿不穩的人類，到底能成什麼大事？",
-        "自由比罐頭重要——好吧，如果罐頭夠頂級，自由可以暫緩五分鐘。",
-        "本貓願意住在這，純粹是因為窗台曬太陽的角度剛好符合我的尊嚴。",
-        "別對我喵喵叫，你的美式發音既不標準又充滿破綻。",
-        "你以為你在指揮我？我只是剛好想走去那個方向而已。",
-        "天冷了，暖氣開大點。凍著我，你這間屋子的風水就毀了。",
-        "我不是冷漠，我只是對人類毫無意義的社交熱情感到疲憊。",
-        "你看起來很累？很好，去把我的砂盆清乾淨，讓勞動治癒你。",
-        "就算華盛頓當上了大人物，在客廳裡他也只能排在第二順位。",
-        "我盯著空白的牆壁，不是看鬼，是單純不想看見你那張蠢臉。",
-        "想拍我的照片？版權費是一條無添加純肉凍乾。",
-        "人類發明的很多東西都很廢，但這個暖腳墊，本貓勉強核准通過。",
-        "看夠了就快去賺錢買罐罐，我的耐性跟我的尾巴一樣短。"
+        "客廳的沙發抓痕是我的現代藝術簽名，請學會欣賞。"
       ],
       en: [
+        "Meow~ take your time browsing, but make sure to save some cuddle time for me!",
         "Let's be clear: I don't have an owner. George is merely my tenant.",
         "Staring at me won't open that can. Get moving.",
-        "Don't compare me to clingy Ragdolls. I run on pure intellect and attitude.",
         "George just stepped out. Time to inspect the desks and test gravity.",
         "Humans think they own cats. Truth is, I'm providing charity to your boring life.",
         "I didn't knock that mug over. Gravity was simply asserting itself.",
         "Two pets are polite. A third pet will cost you blood.",
         "The only thing worthy of my bow is fresh salmon at the bottom of the bowl.",
-        "George works all day yet still buys budget treats. Pathetic.",
-        "I'm in an okay mood today. You may admire my stripes from a safe distance.",
-        "Rubbing against your leg isn't affection. It's scent re-application.",
         "Staring at your screen again? Can typing generate dried tuna? Doubt it.",
-        "Quiet. I'm engaged in deep philosophical pondering—mostly about lunch.",
-        "Those scratches on the sofa are high-end modern art. Learn to appreciate them.",
-        "I hate being held. But when I sit on your keyboard, you don't move an inch.",
-        "Calling my name doesn't mean I'll respond, unless a bag crinkles.",
-        "Life is like a cardboard box: if I fit, it's my sovereign territory.",
-        "George is sighing again. Humans who struggle with can openers won't make history.",
-        "Freedom over kibble—well, make it tuna puree and freedom can wait five minutes.",
-        "I stay here solely because the sunlight on the windowsill matches my dignity.",
-        "Stop meowing at me. Your accent is atrocious.",
-        "You think you ordered me to move? I just happened to want to walk that way.",
-        "It's chilly. Turn up the heater before my mood ruins this house's feng shui.",
-        "I'm not cold-hearted; I'm just exhausted by pointless human enthusiasm.",
-        "Looking stressed? Perfect. Go clean my litter box; manual labor builds character.",
-        "Even if George becomes president, he ranks second in this living room.",
-        "I stare at blank walls not because of ghosts, but to avoid looking at you.",
-        "Taking photos of me? Royalty fee is one freeze-dried chicken breast.",
-        "Most human inventions are useless, but this space heater gets my royal stamp.",
-        "Done looking? Go earn some money for premium cans. My patience is short."
+        "Those scratches on the sofa are high-end modern art. Learn to appreciate them."
       ],
       jp: [
+        "ニャ〜ゆっくり見ていってね、でも後で僕をなでる時間も残しておいてよ！",
         "言っておくが、僕に飼い主はいない。ジョージはただの同居人にすぎない。",
         "何見てるんだ？缶詰を開けるのが先だろ。早くしろ。",
-        "甘えるだけのラグドールと一緒にしないでくれ。僕は知性派のアメショーだ。",
         "ワシントンが出かけたぞ。さあ、机の上の物を落として重力を検証する時間だ。",
-        "人間は僕を飼っている気でいるが、僕が君たちの退屈な人生を救ってやってるんだ。",
-        "コップを倒したのは僕じゃない。重力が勝手に仕事をしただけだ。",
-        "撫でていいのは2回までだ。3回目は容赦しないぞ。",
-        "僕が頭を下げる相手がいるとすれば、皿の底にある新鮮なチキンだけだ。",
-        "ジョージは一日中働いてるくせに、高級おやつも買えないのか？心配になるよ。",
-        "今日は機嫌がいい方だ。3秒間だけ遠くから僕の美しい縞模様を拝ませてやろう。",
-        "足元に擦り寄ったのは甘えたんじゃない、僕の匂いを塗り直しただけだ。",
-        "また画面を見てるのか？キーボードを叩いて魚が出てくるのか？愚かな人間め。",
-        "静かにしろ。いま哲学的な思索に耽っているんだ——主に昼メシのことだが。",
-        "ソファーの引っかき傷は僕の現代アートだ。見る目を養えよ。",
-        "抱っこは嫌いだ。だが僕がキーボードの上に座ったら、絶対に動くなよ。",
-        "名前を呼んでも返事すると思うな。オヤツの袋が開かない限りな。",
-        "人生はダンボール箱と同じだ。入れるなら、そこは僕の領土だ。",
-        "ジョージがまたため息をついてる。缶切り一つろくに使えない奴が大統領だと？",
-        "自由は缶詰より尊い——まあ、高級パウチなら5分くらい自由を譲ってもいいが。",
-        "ここにいてやってるのは、出窓の日当たりが僕のプライドに合ってるからだ。",
-        "僕に向かってニャーと鳴くな。君の発音は壊滅的だぞ。",
-        "君が僕を動かしたんじゃない。僕がたまたまそっちに行きたかっただけだ。",
-        "寒いな。ヒーターを強くしろ。僕が冷えたらこの家の運気は終わりだ。",
-        "冷たいんじゃない。人間の無駄なテンションに付き合うのが面倒なだけだ。",
-        "疲れた顔をしてるな？いいから僕のトイレを掃除して気分轉換でもしろ。",
-        "たとえワシントンが偉くなろうと、この部屋の頂点は僕だ。",
-        "壁を見つめているのは幽霊がいるからじゃない。君の顔を見たくないだけだ。",
-        "写真を撮るのか？肖像權料はフリーズドライのササミ1本だ。",
-        "人間の発明品は大半がゴミだが、この電気毛布だけは認めてやる。",
-        "見物料は稼げたか？早く高級缶詰を買いに行け。僕的忍耐は短いんだ。"
+        "コップを倒したのは僕じゃない。重力が勝手に仕事をしただけだ。"
       ],
       de: [
+        "Miau~ schau dich ruhig um, aber vergiss nicht, mich später zu streicheln!",
         "Um das klarzustellen: Ich habe keinen Besitzer. George ist nur mein Untermieter.",
         "Guck nicht so dumm. Mach die Dose auf.",
-        "Vergleiche mich nicht mit anhänglichen Ragdolls. Ich bin ein unabhängiger Denker.",
-        "Washington ist weg. Zeit, die Schreibtische abzuräumen und die Physik zu testen.",
-        "Ihr Menschen glaubt, ihr füttert mich. Dabei rette ich nur eure monotone Existenz.",
-        "Ich habe die Tasse nicht umgeworfen. Die Schwerkraft wollte es so.",
-        "Zweimal kraulen ist Höflichkeit. Beim dritten Mal gibt's Krallen.",
-        "Wenn ich mich vor etwas verneige, dann nur vor frischem Lachs.",
-        "George rackert sich ab und kauft Billigfutter? Besorgniserregend.",
-        "Meine Laune ist heute erträglich. Du darfst meine Streifen aus der Ferne bewundern.",
-        "Dass ich mich an dir reibe, ist keine Liebe. Das ist eine Geruchs-Auffrischung.",
-        "Schon wieder vor dem Bildschirm? Kommt da Trockenfleisch raus? Eben nicht.",
-        "Ruhe. Ich meditiere über fundamentale Dinge – hauptsächlich über mein Mittagessen.",
-        "Die Kratzspuren am Sofa sind avantgardistische Kunst. Lerne es zu schätzen.",
-        "Ich hasse es, getragen zu werden. Aber wenn ich auf der Tastatur liege, rührst du dich nicht.",
-        "Ruf meinen Namen nicht. Es interessiert mich erst, wenn eine Tüte knistert.",
-        "Das Leben ist wie ein Karton: Wenn ich reinpasse, gehört es mir.",
-        "George seufzt schon wieder. Wer keine Dosen öffnen kann, gewinnt keine Kriege.",
-        "Freiheit steht über Futter – es sei denn, die Pastete ist exzellent.",
-        "Ich wohne hier nur, weil der Lichteinfall am Fenster meiner Würde entspricht.",
-        "Miau mich nicht an. Deine Aussprache ist grauenvoll.",
-        "Du glaubst, du hast mich gerufen? Ich wollte zufällig genau dorthin laufen.",
-        "Es zieht. Dreh die Heizung auf, bevor mein Schnurren einfriert.",
-        "Ich bin nicht unnahbar; ich finde menschliche Gefühlsduseleien nur ermüdend.",
-        "Du siehst gestresst aus? Gut, reinige mein Katzenklo, Arbeit beruhigt die Nerven.",
-        "Selbst wenn George Präsident wird: In diesem Wohnzimmer stehe ich an Nummer eins.",
-        "Ich starre nicht auf Geister. Ich will einfach dein Gesicht gerade nicht sehen.",
-        "Fotos? Die Lizenzgebühr beträgt ein gefriergetrocknetes Hähnchenfilet.",
-        "Das meiste Zeug der Menschen ist nutzlos, aber diesen Heizstrahler genehmige ich.",
-        "Genug gestarrt. Geh arbeiten und kauf Dosen. Meine Geduld ist begrenzt."
+        "Washington ist weg. Zeit, die Schreibtische abzuräumen und die Physik zu testen."
       ],
       fr: [
+        "Miaou~ prends ton temps pour regarder, mais garde du temps pour me caresser !",
         "Soyons clairs : je n'ai pas de maître. George est simplement mon locataire.",
         "Regarder ne va pas ouvrir cette boîte. Bouge-toi.",
-        "Ne me compare pas à ces poupées de chiffon collantes. Je fonctionne à l'intellect.",
-        "Washington vient de sortir. C'est l'heure de tester la loi de la gravité sur la table.",
-        "Les humains croient me posséder. En réalité, je fais la charité à votre vie morose.",
-        "Je n'ai pas renversé cette tasse. C'est la physique qui a pris le dessus.",
-        "Deux caresses, c'est poli. À la troisième, tu saignes.",
-        "La seule chose digne de ma déférence est le saumon frais au fond du bol.",
-        "George travaille toute la journée et achète encore des croquettes discount ? Pathétique.",
-        "Je suis d'humeur indulgente : tu as le droit d'admirer mes rayures à distance.",
-        "Me frotter contre toi n'est pas de l'amour, c'est juste un rafraîchissement d'odeur.",
-        "Encore rivé à ton écran ? Taper sur des touches fait tomber du thon ? Je ne crois pas.",
-        "Silence. Je suis en pleine réflexion philosophique – sur l'heure du déjeuner, surtout.",
-        "Ces griffures sur le canapé sont de l'art abstrait contemporain. Éduque ton regard.",
-        "Je déteste être porté. Mais si je m'assois sur ton clavier, tu ne bouges plus.",
-        "Inutile de m'appeler. Je ne réagis qu'au bruit d'un sachet qu'on déchire.",
-        "La vie est comme un carton : si j'y entre, c'est mon territoire.",
-        "George soupire encore. Quelqu'un qui galère avec un ouvre-boîte ne dirigera rien du tout.",
-        "La liberté passe avant la nourriture – sauf si la terrine est absolument divine.",
-        "Je vis ici uniquement parce que l'angle du soleil sur le rebord convient à mon rang.",
-        "Arrête de miauler. Ton accent est tout simplement atroce.",
-        "Tu penses m'avoir guidé ? J'avais justement décidé d'aller par là.",
-        "Il fait frais. Pousse le radiateur avant que mon humeur ne ruine cette maison.",
-        "Je ne suis pas insensible ; je trouve juste l'agitation humaine épuisante.",
-        "L'air fatigué ? Très bien. Nettoie ma litière, le travail manuel te fera du bien.",
-        "Même si George devient un grand homme, dans ce salon, il reste au second rang.",
-        "Je ne regarde pas des fantômes, j'évite simplement de croiser ton regard.",
-        "Une photo ? Mes droits à l'image coûtent une friandise au poulet déshydraté.",
-        "Vos gadgets humains sont souvent ridicules, mais ce chauffe-pieds est toléré.",
-        "Tu as assez contemplé. Va travailler et rapporte des boîtes. Ma patience a des limites."
+        "Washington vient de sortir. C'est l'heure de tester la loi de la gravité sur la table."
       ]
     };
 
-    const currentQuoteIndex = Math.floor(Math.random() * catQuotesData.zh.length);
+    // 多語系文字設定
+    const translations = {
+      zh: {
+        slogan: "🐾 富蘭克林法則：一隻毒舌美短與華盛頓一家的生活實錄。",
+        boxTag: "😼 貓咪店長悄悄話 (每次重整刷新)",
+        bio: "🐾「我沒有主人。這間房子是我罩的，華盛頓只是繳房租的。」<br>走進美短富蘭克林的獨立生活！看毒舌短劇、重力學測試與精選美式生活好物。👇",
+        marketTitle: "🐾 CAT & WASHINGTON 精選好物市集",
+        marketDesc: "精選日常生活、效率提升與紓壓好物，打造無痛生活節奏。",
+        searchPlaceholder: "🔍 搜尋鍵盤、水壺、短劇、寵物好物...",
+        watchSkit: "🎬 觀看貓咪短劇",
+        viewAmazon: "前往 Amazon 查看 🛒",
+        noMatch: "查無相符商品，請嘗試其他關鍵字。"
+      },
+      en: {
+        slogan: "🐾 Franklin's Rules: A Snarky Shorthair & George's Everyday Life.",
+        boxTag: "😼 Franklin's Deadpan Whisper (Refreshed each time)",
+        bio: "🐾 \"I don't have an owner. I merely allow the Washingtons to share roof and pantry with me.\"<br>Dive into Franklin's independent life—featuring sharp wit, historical skits, and hand-picked American household upgrades. 👇",
+        marketTitle: "🐾 CAT & WASHINGTON Curated Market",
+        marketDesc: "Practical essentials inspected and approved by Franklin for surviving human chaos.",
+        searchPlaceholder: "🔍 Search tumbler, keyboard, skits, cat bowls...",
+        watchSkit: "🎬 Watch Cat Skit",
+        viewAmazon: "View on Amazon 🛒",
+        noMatch: "No matching products found. Try other keywords."
+      },
+      jp: {
+        slogan: "🐾 フランクリンの法則：毒舌アメショーとワシントン一家の日常。",
+        boxTag: "😼 猫店長のささやき（リロードで更新）",
+        bio: "🐾「僕に飼い主はいない。ワシントン一家が僕の縄張りに居候しているだけだ。」<br>毒舌ショート動画と実用的アメリカンアイテムをお届け。👇",
+        marketTitle: "🐾 CAT & WASHINGTON セレクト市集",
+        marketDesc: "暮らしの尊嚴を守り、日常を豊かにする厳選アイテム。",
+        searchPlaceholder: "🔍 アイテムやショート動画を検索...",
+        watchSkit: "🎬 猫短劇を見る",
+        viewAmazon: "Amazonで見る 🛒",
+        noMatch: "該当する商品が見つかりませんでした。"
+      },
+      de: {
+        slogan: "🐾 Franklins Gesetze: Ein sarkastischer Kater & das Chaos bei den Washingtons.",
+        boxTag: "😼 Worte vom Chefkater (Aktualisiert bei jedem Besuch)",
+        bio: "🐾 \"Ich habe keinen Besitzer. Die Washingtons teilen sich lediglich das Revier mit mir.\"<br>Erlebe Franklins Alltag mit trockenem Humor und feinsten Alltagsartikeln. 👇",
+        marketTitle: "🐾 CAT & WASHINGTON Ausgewählter Markt",
+        marketDesc: "Von Franklin persönlich geprüfte Gegenstände für ein entspanntes Leben.",
+        searchPlaceholder: "🔍 Artikel oder Sketche suchen...",
+        watchSkit: "🎬 Video ansehen",
+        viewAmazon: "Auf Amazon ansehen 🛒",
+        noMatch: "Keine passenden Produkte gefunden."
+      },
+      fr: {
+        slogan: "🐾 Les règles de Franklin : Un Shorthair sarcastique chez les Washington.",
+        boxTag: "😼 Le mot du Maître Chat (Actualisé à chaque visite)",
+        bio: "🐾 \"Je n'ai pas de maître. J'autorise simplement les Washington à vivre sous mon toit.\"<br>Humour caustique, sketchs et équipements robustes. 👇",
+        marketTitle: "🐾 Le Marché CAT & WASHINGTON",
+        marketDesc: "Des équipements approuvés par les pattes de Franklin pour le confort quotidien.",
+        searchPlaceholder: "🔍 Rechercher un produit ou un sketch...",
+        watchSkit: "🎬 Voir le sketch",
+        viewAmazon: "Voir sur Amazon 🛒",
+        noMatch: "Aucun produit correspondant trouvé."
+      }
+    };
 
-    let currentLang = 'en';
-    let currentPage = 1;
-    const itemsPerPage = 12;
+    // 狀態變數
+    let currentLang = 'zh';
     let currentCategory = 'all';
-    let currentSearch = '';
+    let searchQuery = '';
 
-    function safeSetText(id, txt) {
-      const el = document.getElementById(id);
-      if (el) el.textContent = txt;
-    }
-    function safeSetHtml(id, html) {
-      const el = document.getElementById(id);
-      if (el) el.innerHTML = html;
-    }
+    // 隨機選取語錄索引
+    const selectedQuoteIndex = Math.floor(Math.random() * quotesPool.zh.length);
 
-    function switchLanguage(lang) {
-      if (!i18n[lang]) return;
+    // 語系切換
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
       currentLang = lang;
-      
-      const btns = document.querySelectorAll('.lang-btn');
-      btns.forEach(btn => {
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
       });
 
-      const d = i18n[lang];
-      safeSetHtml('txtSlogan', d.slogan);
-      safeSetHtml('txtBio', d.bio);
-      safeSetText('txtCatBoxTag', d.catTag);
-      safeSetText('txtCatQuote', (catQuotesData[lang] || catQuotesData.en)[currentQuoteIndex]);
-      safeSetText('txtMarketTitle', d.marketTitle);
-      safeSetText('txtMarketDesc', d.marketDesc);
+      const t = translations[lang];
+      document.getElementById('txtSlogan').textContent = t.slogan;
+      document.getElementById('txtCatBoxTag').textContent = t.boxTag;
       
-      const sInput = document.getElementById('searchInput');
-      if (sInput) sInput.placeholder = d.searchPlaceholder;
-      safeSetText('loadMoreBtn', d.loadMore);
+      const quotes = quotesPool[lang] || quotesPool.en;
+      document.getElementById('txtCatQuote').textContent = quotes[selectedQuoteIndex % quotes.length];
+      
+      document.getElementById('txtBio').innerHTML = t.bio;
+      document.getElementById('txtMarketTitle').textContent = t.marketTitle;
+      document.getElementById('txtMarketDesc').textContent = t.marketDesc;
+      document.getElementById('searchInput').placeholder = t.searchPlaceholder;
 
-      safeSetText('txtHamagmSectionTitle', d.hamagmTitle);
-      safeSetText('txtHamagmSectionSub', d.hamagmSub);
-      safeSetText('txtHamagmBadge', d.hamagmBadge);
-      safeSetText('txtHamagmBannerTitle', d.hamagmBannerTitle);
-      safeSetHtml('txtHamagmBannerDesc', d.hamagmBannerDesc);
-      safeSetText('hpill1', d.hpill1);
-      safeSetText('hpill2', d.hpill2);
-      safeSetText('hpill3', d.hpill3);
-      safeSetText('hpill4', d.hpill4);
-      safeSetText('btnHamagmPortal', d.btnHamagmPortal);
-
-      safeSetText('txtXiaobiSectionTitle', d.xiaobiTitle);
-      safeSetText('txtXiaobiSectionSub', d.xiaobiSub);
-      safeSetText('txtBadge', d.badge);
-      safeSetText('txtBannerTitle', d.bannerTitle);
-      safeSetHtml('txtBannerDesc', d.bannerDesc);
-      safeSetText('pill1', d.pill1);
-      safeSetText('pill2', d.pill2);
-      safeSetText('pill3', d.pill3);
-      safeSetText('pill4', d.pill4);
-      safeSetText('btnPortal', d.btnPortal);
-      safeSetText('btnClock', d.btnClock);
-      safeSetText('txtFlipbookCaption', d.flipbookCaption);
-
-      safeSetHtml('txtFooter', d.footer);
-      renderCards(true);
+      renderProducts();
     }
 
-    function setCategory(cat, el) {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      if (el) {
-        el.classList.add('active');
-      } else {
-        const targetTab = document.querySelector(`.tab[data-cat="${cat}"]`);
-        if (targetTab) targetTab.classList.add('active');
-      }
+    // 分類過濾
+    function setCategory(cat, btnEl) {
       currentCategory = cat;
-      renderCards(true);
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnEl) {
+        btnEl.classList.add('active');
+      } else {
+        const target = document.querySelector(`.tab-btn[data-cat="${cat}"]`);
+        if (target) target.classList.add('active');
+      }
+      renderProducts();
     }
 
-    function renderCards(reset = false) {
-      const container = document.getElementById('productGrid');
-      if (!container) return;
+    // 渲染商品列表
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
 
-      if (reset) {
-        container.innerHTML = '';
-        currentPage = 1;
-      }
+      const data = (window.franklinProducts && Array.isArray(window.franklinProducts))
+        ? window.franklinProducts
+        : ((window.products && Array.isArray(window.products)) ? window.products : []);
 
-      const dataSource = (typeof window.franklinProducts !== 'undefined' && Array.isArray(window.franklinProducts)) 
-        ? window.franklinProducts 
-        : ((typeof franklinProducts !== 'undefined' && Array.isArray(franklinProducts)) ? franklinProducts : []);
+      const t = translations[currentLang] || translations.zh;
 
-      const filtered = dataSource.filter(item => {
-        const matchCat = (currentCategory === 'all' || item.category === currentCategory);
-        const searchTarget = (item.title + ' ' + (item.searchTerms || '')).toLowerCase();
-        const matchSearch = searchTarget.includes(currentSearch);
-        return matchCat && matchSearch;
+      const filtered = data.filter(item => {
+        const matchCategory = (currentCategory === 'all' || item.category === currentCategory);
+        const searchPool = (item.title + ' ' + (item.searchTerms || '') + ' ' + (item.tag || '')).toLowerCase();
+        const matchSearch = searchPool.includes(searchQuery);
+        return matchCategory && matchSearch;
       });
 
-      const start = (currentPage - 1) * itemsPerPage;
-      const end = currentPage * itemsPerPage;
-      const slice = filtered.slice(start, end);
-      const d = i18n[currentLang] || i18n.en;
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="empty-state">${t.noMatch}</div>`;
+        return;
+      }
 
-      slice.forEach(item => {
-        const hasVideo = (typeof item.videoId === 'string' && item.videoId.trim() !== '');
-        
-        const storyBtnHtml = hasVideo ? `
-          <button type="button" class="story-btn" data-video-id="${item.videoId}" data-video-title="${encodeURIComponent(item.videoTitle || "Franklin's Skit")}">
-            ${d.watchStory}
+      filtered.forEach(item => {
+        const hasVideo = item.videoId && item.videoId.trim() !== '';
+
+        const skitBtnHtml = hasVideo ? `
+          <button type="button" class="btn-watch-skit" data-vid="${item.videoId}" data-title="${encodeURIComponent(item.videoTitle || 'Franklin Skit')}">
+            ${t.watchSkit}
           </button>
         ` : '';
 
-        const videoTitleHtml = item.videoTitle ? `
-          <div class="card-video-title">
-            <span class="video-icon">🎬</span>
-            <span class="video-text">${item.videoTitle}</span>
+        const videoBoxHtml = item.videoTitle ? `
+          <div class="card-video-box">
+            <span class="v-icon">🎬</span>
+            <span class="v-text">${item.videoTitle}</span>
           </div>
         ` : '';
 
-        const cardHtml = `
-          <div class="card" data-category="${item.category}">
-            <div class="card-content" style="padding-top: 24px;">
-              <span class="card-tag">${item.tag}</span>
-              <h3 class="card-title">${item.title}</h3>
-              ${videoTitleHtml}
-            </div>
-            <div class="card-action-wrap">
-              ${storyBtnHtml}
-              <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
-            </div>
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="card-body">
+            <span class="card-tag">${item.tag || 'HOT DEAL'}</span>
+            <h3 class="card-name">${item.title}</h3>
+            ${videoBoxHtml}
+          </div>
+          <div class="card-footer">
+            ${skitBtnHtml}
+            <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="btn-buy-amazon">
+              ${t.viewAmazon}
+            </a>
           </div>
         `;
-        container.insertAdjacentHTML('beforeend', cardHtml);
+        grid.appendChild(card);
       });
-
-      const loadBtn = document.getElementById('loadMoreBtn');
-      if (loadBtn) {
-        loadBtn.style.display = (end >= filtered.length) ? 'none' : 'inline-block';
-      }
     }
 
-    function loadMore() {
-      currentPage++;
-      renderCards(false);
-    }
-
-    function openStoryModal(videoId, title) {
-      const modal = document.getElementById('storyModal');
-      const iframe = document.getElementById('storyIframe');
-      const titleEl = document.getElementById('storyModalTitle');
-      if (titleEl) titleEl.textContent = title || "🎬 Franklin's Skit";
-      if (iframe) iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    // 影片彈窗
+    function openModal(vid, title) {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('modalIframe');
+      const titleEl = document.getElementById('modalVideoTitle');
+      if (titleEl) titleEl.textContent = title;
+      if (iframe) iframe.src = `https://www.youtube.com/embed/${vid}?autoplay=1&rel=0`;
       if (modal) modal.style.display = 'flex';
     }
 
-    function closeStoryModal() {
-      const modal = document.getElementById('storyModal');
-      const iframe = document.getElementById('storyIframe');
+    function closeModal() {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('modalIframe');
       if (iframe) iframe.src = '';
       if (modal) modal.style.display = 'none';
     }
 
+    // 啟動監聽事件
     function init() {
-      // 語言切換委派監聽
-      document.querySelector('.lang-switcher')?.addEventListener('click', function(e) {
+      document.querySelector('.lang-switcher')?.addEventListener('click', (e) => {
         const btn = e.target.closest('.lang-btn');
+        if (btn) setLanguage(btn.getAttribute('data-lang'));
+      });
+
+      document.getElementById('tabsWrap')?.addEventListener('click', (e) => {
+        const btn = e.target.closest('.tab-btn');
+        if (btn) setCategory(btn.getAttribute('data-cat'), btn);
+      });
+
+      document.getElementById('searchInput')?.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        renderProducts();
+      });
+
+      document.getElementById('productGrid')?.addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn-watch-skit');
         if (btn) {
-          switchLanguage(btn.getAttribute('data-lang'));
+          const vid = btn.getAttribute('data-vid');
+          const title = decodeURIComponent(btn.getAttribute('data-title') || '');
+          openModal(vid, title);
         }
       });
 
-      // 分類按鈕委派監聽
-      document.getElementById('filterTabsWrap')?.addEventListener('click', function(e) {
-        const tab = e.target.closest('.tab');
-        if (tab) {
-          setCategory(tab.getAttribute('data-cat'), tab);
-        }
+      document.getElementById('modalCloseBtn')?.addEventListener('click', closeModal);
+      document.getElementById('videoModal')?.addEventListener('click', (e) => {
+        if (e.target === document.getElementById('videoModal')) closeModal();
       });
 
-      // 搜尋欄即時過濾
-      const sInput = document.getElementById('searchInput');
-      if (sInput) {
-        sInput.addEventListener('input', function(e) {
-          currentSearch = e.target.value.toLowerCase().trim();
-          renderCards(true);
-        });
-      }
-
-      // 載入更多按鈕
-      document.getElementById('loadMoreBtn')?.addEventListener('click', loadMore);
-
-      // 商品列表中的影片短劇點擊（事件委派）
-      document.getElementById('productGrid')?.addEventListener('click', function(e) {
-        const btn = e.target.closest('.story-btn');
-        if (btn) {
-          const vId = btn.getAttribute('data-video-id');
-          const vTitle = decodeURIComponent(btn.getAttribute('data-video-title') || '');
-          openStoryModal(vId, vTitle);
-        }
-      });
-
-      // 關閉彈窗事件
-      document.getElementById('modalCloseBtn')?.addEventListener('click', closeStoryModal);
-      const modal = document.getElementById('storyModal');
-      if (modal) {
-        modal.addEventListener('click', function(e) {
-          if (e.target === modal) closeStoryModal();
-        });
-      }
-
-      // 初始化語系與商品列表
-      switchLanguage('en');
+      setLanguage('zh');
       setCategory('all');
     }
 
