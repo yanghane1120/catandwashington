@@ -553,7 +553,42 @@
     <div class="market-grid" id="productGrid"></div>
   </main>
 
-  <!-- 4. 頁尾 -->
+  <!-- 4. 姊妹與合作站點推薦專區 -->
+  <section class="bottom-section" style="width: 100%; max-width: 960px; margin-top: 45px; display: flex; flex-direction: column; gap: 20px;">
+    
+    <!-- HAMAGM 推薦卡片 -->
+    <div style="background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); border: 1.5px solid #bbf7d0; border-radius: 20px; padding: 22px 24px; box-shadow: 0 4px 16px rgba(22, 101, 52, 0.05);">
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px;">
+        <span style="background: #16a34a; color: #ffffff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 9999px; text-transform: uppercase;">Partner Hub</span>
+        <h3 style="font-size: 17px; font-weight: 800; color: #0f172a;">HAMAGM 官方旗艦站</h3>
+      </div>
+      <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin-bottom: 14px;">
+        探索溫柔軟萌的動物日常、科技開箱與全方位好物市集！<br>
+        <em>"Ha! Making animals great, and the age a little better."</em>
+      </p>
+      <a href="https://yanghane1120.github.io/hamagm/" target="_blank" rel="noopener noreferrer" style="background: #16a34a; color: #ffffff; text-decoration: none; font-weight: 800; font-size: 13.5px; padding: 10px 20px; border-radius: 10px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 3px 10px rgba(22, 163, 74, 0.25); transition: background 0.2s;">
+        🌐 前往 HAMAGM 官方旗艦站 ➔
+      </a>
+    </div>
+
+    <!-- lazy life. 推薦卡片 -->
+    <div style="background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); border: 1.5px solid #bae6fd; border-radius: 20px; padding: 22px 24px; box-shadow: 0 4px 16px rgba(2, 132, 199, 0.05);">
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px;">
+        <span style="background: #0284c7; color: #ffffff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 9999px; text-transform: uppercase;">Official IP Portal</span>
+        <h3 style="font-size: 17px; font-weight: 800; color: #0f172a;">lazy life. 官方品牌入口</h3>
+      </div>
+      <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin-bottom: 14px;">
+        我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的品牌基地。<br>
+        <em>"No grand ambitions here—just discovering how to effortlessly devolve into liquid."</em>
+      </p>
+      <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" style="background: #0284c7; color: #ffffff; text-decoration: none; font-weight: 800; font-size: 13.5px; padding: 10px 20px; border-radius: 10px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25); transition: background 0.2s;">
+        🌐 訪問 lazy life. 官方入口 ➔
+      </a>
+    </div>
+
+  </section>
+
+  <!-- 5. 頁尾 -->
   <footer class="footer">
     <p class="footer-text" id="txtFooter">
       CAT & WASHINGTON. All rights reserved.<br>
@@ -561,7 +596,7 @@
     </p>
   </footer>
 
-  <!-- 5. Shorts 彈窗播放器 -->
+  <!-- 6. Shorts 彈窗播放器 -->
   <div id="videoModal" class="modal-overlay">
     <div class="modal-inner">
       <div class="modal-header">
@@ -579,7 +614,6 @@
 
   <!-- 主邏輯腳本 -->
   <script>
-    // 傲嬌富蘭克林多語系語錄
     const quotesPool = {
       zh: [
         "喵～你可以慢慢看，但要記得分我一點摸摸的時間喔！",
@@ -626,7 +660,6 @@
       ]
     };
 
-    // 多語系文字設定
     const translations = {
       zh: {
         slogan: "🐾 富蘭克林法則：一隻毒舌美短與華盛頓一家的生活實錄。",
@@ -685,15 +718,12 @@
       }
     };
 
-    // 狀態變數
     let currentLang = 'zh';
     let currentCategory = 'all';
     let searchQuery = '';
 
-    // 隨機選取語錄索引
     const selectedQuoteIndex = Math.floor(Math.random() * quotesPool.zh.length);
 
-    // 語系切換
     function setLanguage(lang) {
       if (!translations[lang]) return;
       currentLang = lang;
@@ -717,7 +747,6 @@
       renderProducts();
     }
 
-    // 分類過濾
     function setCategory(cat, btnEl) {
       currentCategory = cat;
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -730,7 +759,6 @@
       renderProducts();
     }
 
-    // 渲染商品列表
     function renderProducts() {
       const grid = document.getElementById('productGrid');
       if (!grid) return;
@@ -789,7 +817,6 @@
       });
     }
 
-    // 影片彈窗
     function openModal(vid, title) {
       const modal = document.getElementById('videoModal');
       const iframe = document.getElementById('modalIframe');
@@ -806,7 +833,6 @@
       if (modal) modal.style.display = 'none';
     }
 
-    // 啟動監聽事件
     function init() {
       document.querySelector('.lang-switcher')?.addEventListener('click', (e) => {
         const btn = e.target.closest('.lang-btn');
