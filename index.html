@@ -522,7 +522,7 @@
     </p>
 
     <div class="social-links">
-      <a href="https://www.youtube.com/@HAMAGM99" target="_blank" rel="noopener noreferrer" class="social-pill">📺 YouTube 系列短劇</a>
+      <a href="https://www.youtube.com/@HAMAGM99" target="_blank" rel="noopener noreferrer" class="social-pill" id="socialYt">📺 YouTube 系列短劇</a>
       <a href="https://www.instagram.com/dixiliuliu/" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
       <a href="https://www.facebook.com/Hamagm99" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
     </div>
@@ -560,13 +560,13 @@
     <div style="background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); border: 1.5px solid #bbf7d0; border-radius: 20px; padding: 22px 24px; box-shadow: 0 4px 16px rgba(22, 101, 52, 0.05);">
       <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px;">
         <span style="background: #16a34a; color: #ffffff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 9999px; text-transform: uppercase;">Partner Hub</span>
-        <h3 style="font-size: 17px; font-weight: 800; color: #0f172a;">HAMAGM 官方旗艦站</h3>
+        <h3 id="txtHamagmTitle" style="font-size: 17px; font-weight: 800; color: #0f172a;">HAMAGM 官方旗艦站</h3>
       </div>
-      <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin-bottom: 14px;">
+      <p id="txtHamagmDesc" style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin-bottom: 14px;">
         探索溫柔軟萌的動物日常、科技開箱與全方位好物市集！<br>
         <em>"Ha! Making animals great, and the age a little better."</em>
       </p>
-      <a href="https://yanghane1120.github.io/hamagm/" target="_blank" rel="noopener noreferrer" style="background: #16a34a; color: #ffffff; text-decoration: none; font-weight: 800; font-size: 13.5px; padding: 10px 20px; border-radius: 10px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 3px 10px rgba(22, 163, 74, 0.25); transition: background 0.2s;">
+      <a id="btnHamagm" href="https://yanghane1120.github.io/hamagm/" target="_blank" rel="noopener noreferrer" style="background: #16a34a; color: #ffffff; text-decoration: none; font-weight: 800; font-size: 13.5px; padding: 10px 20px; border-radius: 10px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 3px 10px rgba(22, 163, 74, 0.25); transition: background 0.2s;">
         🌐 前往 HAMAGM 官方旗艦站 ➔
       </a>
     </div>
@@ -575,13 +575,13 @@
     <div style="background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); border: 1.5px solid #bae6fd; border-radius: 20px; padding: 22px 24px; box-shadow: 0 4px 16px rgba(2, 132, 199, 0.05);">
       <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px;">
         <span style="background: #0284c7; color: #ffffff; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 9999px; text-transform: uppercase;">Official IP Portal</span>
-        <h3 style="font-size: 17px; font-weight: 800; color: #0f172a;">lazy life. 官方品牌入口</h3>
+        <h3 id="txtLazyLifeTitle" style="font-size: 17px; font-weight: 800; color: #0f172a;">lazy life. 官方品牌入口</h3>
       </div>
-      <p style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin-bottom: 14px;">
+      <p id="txtLazyLifeDesc" style="font-size: 13.5px; color: #64748b; line-height: 1.6; margin-bottom: 14px;">
         我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的品牌基地。<br>
         <em>"No grand ambitions here—just discovering how to effortlessly devolve into liquid."</em>
       </p>
-      <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" style="background: #0284c7; color: #ffffff; text-decoration: none; font-weight: 800; font-size: 13.5px; padding: 10px 20px; border-radius: 10px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25); transition: background 0.2s;">
+      <a id="btnLazyLife" href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" style="background: #0284c7; color: #ffffff; text-decoration: none; font-weight: 800; font-size: 13.5px; padding: 10px 20px; border-radius: 10px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25); transition: background 0.2s;">
         🌐 訪問 lazy life. 官方入口 ➔
       </a>
     </div>
@@ -665,56 +665,141 @@
         slogan: "🐾 富蘭克林法則：一隻毒舌美短與華盛頓一家的生活實錄。",
         boxTag: "😼 貓咪店長悄悄話 (每次重整刷新)",
         bio: "🐾「我沒有主人。這間房子是我罩的，華盛頓只是繳房租的。」<br>走進美短富蘭克林的獨立生活！看毒舌短劇、重力學測試與精選美式生活好物。👇",
+        socialYt: "📺 YouTube 系列短劇",
         marketTitle: "🐾 CAT & WASHINGTON 精選好物市集",
         marketDesc: "精選日常生活、效率提升與紓壓好物，打造無痛生活節奏。",
         searchPlaceholder: "🔍 搜尋鍵盤、水壺、短劇、寵物好物...",
         watchSkit: "🎬 觀看貓咪短劇",
         viewAmazon: "前往 Amazon 查看 🛒",
-        noMatch: "查無相符商品，請嘗試其他關鍵字。"
+        noMatch: "查無相符商品，請嘗試其他關鍵字。",
+        tabs: {
+          all: "全部商品",
+          tech: "💻 科技與電競",
+          apparel: "🧢 服飾與穿戴",
+          care: "🦷 個人護理",
+          cat: "🐱 貓咪必備",
+          home: "🏠 居家生活",
+          holiday: "🎃 節慶與趣味",
+          snack: "🍢 點心零食"
+        },
+        hamagmTitle: "HAMAGM 官方旗艦站",
+        hamagmDesc: "探索溫柔軟萌的動物日常、科技開箱與全方位好物市集！<br><em>\"Ha! Making animals great, and the age a little better.\"</em>",
+        hamagmBtn: "🌐 前往 HAMAGM 官方旗艦站 ➔",
+        lazyLifeTitle: "lazy life. 官方品牌入口",
+        lazyLifeDesc: "我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的品牌基地。<br><em>\"No grand ambitions here—just discovering how to effortlessly devolve into liquid.\"</em>",
+        lazyLifeBtn: "🌐 訪問 lazy life. 官方入口 ➔"
       },
       en: {
         slogan: "🐾 Franklin's Rules: A Snarky Shorthair & George's Everyday Life.",
         boxTag: "😼 Franklin's Deadpan Whisper (Refreshed each time)",
         bio: "🐾 \"I don't have an owner. I merely allow the Washingtons to share roof and pantry with me.\"<br>Dive into Franklin's independent life—featuring sharp wit, historical skits, and hand-picked American household upgrades. 👇",
+        socialYt: "📺 YouTube Shorts Series",
         marketTitle: "🐾 CAT & WASHINGTON Curated Market",
         marketDesc: "Practical essentials inspected and approved by Franklin for surviving human chaos.",
         searchPlaceholder: "🔍 Search tumbler, keyboard, skits, cat bowls...",
         watchSkit: "🎬 Watch Cat Skit",
         viewAmazon: "View on Amazon 🛒",
-        noMatch: "No matching products found. Try other keywords."
+        noMatch: "No matching products found. Try other keywords.",
+        tabs: {
+          all: "All Products",
+          tech: "💻 Tech & Gaming",
+          apparel: "🧢 Apparel & Wear",
+          care: "🦷 Personal Care",
+          cat: "🐱 Cat Essentials",
+          home: "🏠 Home Living",
+          holiday: "🎃 Festive & Fun",
+          snack: "🍢 Snacks & Treats"
+        },
+        hamagmTitle: "HAMAGM Official Flagship",
+        hamagmDesc: "Discover heartwarming animal moments, tech reviews, and curated lifestyle essentials!<br><em>\"Ha! Making animals great, and the age a little better.\"</em>",
+        hamagmBtn: "🌐 Visit HAMAGM Portal ➔",
+        lazyLifeTitle: "lazy life. Brand Portal",
+        lazyLifeDesc: "No grand ambitions here—just discovering how to effortlessly devolve into liquid. Low-energy survival space.<br><em>\"No grand ambitions here—just discovering how to effortlessly devolve into liquid.\"</em>",
+        lazyLifeBtn: "🌐 Visit lazy life. Portal ➔"
       },
       jp: {
         slogan: "🐾 フランクリンの法則：毒舌アメショーとワシントン一家の日常。",
         boxTag: "😼 猫店長のささやき（リロードで更新）",
         bio: "🐾「僕に飼い主はいない。ワシントン一家が僕の縄張りに居候しているだけだ。」<br>毒舌ショート動画と実用的アメリカンアイテムをお届け。👇",
+        socialYt: "📺 YouTube ショートシリーズ",
         marketTitle: "🐾 CAT & WASHINGTON セレクト市集",
         marketDesc: "暮らしの尊嚴を守り、日常を豊かにする厳選アイテム。",
         searchPlaceholder: "🔍 アイテムやショート動画を検索...",
         watchSkit: "🎬 猫短劇を見る",
         viewAmazon: "Amazonで見る 🛒",
-        noMatch: "該当する商品が見つかりませんでした。"
+        noMatch: "該当する商品が見つかりませんでした。",
+        tabs: {
+          all: "全商品",
+          tech: "💻 テクノロジー・ゲーム",
+          apparel: "🧢 ファッション・ウェア",
+          care: "🦷 パーソナルケア",
+          cat: "🐱 猫用品",
+          home: "🏠 ホーム・インテリア",
+          holiday: "🎃 季節・バラエティ",
+          snack: "🍢 お菓子・スナック"
+        },
+        hamagmTitle: "HAMAGM 公式ポータル",
+        hamagmDesc: "癒やしの動物日常やガジェットレビュー、厳選マーケットをお届け！<br><em>\"Ha! Making animals great, and the age a little better.\"</em>",
+        hamagmBtn: "🌐 HAMAGM 公式サイトへ ➔",
+        lazyLifeTitle: "lazy life. ブランドポータル",
+        lazyLifeDesc: "大きな野望は持たず、いかに理にかなって液体化するかを追求する省エネ生活基地。<br><em>\"No grand ambitions here—just discovering how to effortlessly devolve into liquid.\"</em>",
+        lazyLifeBtn: "🌐 lazy life. ポータルへ ➔"
       },
       de: {
         slogan: "🐾 Franklins Gesetze: Ein sarkastischer Kater & das Chaos bei den Washingtons.",
         boxTag: "😼 Worte vom Chefkater (Aktualisiert bei jedem Besuch)",
         bio: "🐾 \"Ich habe keinen Besitzer. Die Washingtons teilen sich lediglich das Revier mit mir.\"<br>Erlebe Franklins Alltag mit trockenem Humor und feinsten Alltagsartikeln. 👇",
+        socialYt: "📺 YouTube Shorts Serie",
         marketTitle: "🐾 CAT & WASHINGTON Ausgewählter Markt",
         marketDesc: "Von Franklin persönlich geprüfte Gegenstände für ein entspanntes Leben.",
         searchPlaceholder: "🔍 Artikel oder Sketche suchen...",
         watchSkit: "🎬 Video ansehen",
         viewAmazon: "Auf Amazon ansehen 🛒",
-        noMatch: "Keine passenden Produkte gefunden."
+        noMatch: "Keine passenden Produkte gefunden.",
+        tabs: {
+          all: "Alle Produkte",
+          tech: "💻 Tech & Gaming",
+          apparel: "🧢 Kleidung & Accessoires",
+          care: "🦷 Körperpflege",
+          cat: "🐱 Katzenbedarf",
+          home: "🏠 Wohnen & Haushalt",
+          holiday: "🎃 Festtage & Spaß",
+          snack: "🍢 Snacks & Leckerlis"
+        },
+        hamagmTitle: "HAMAGM Offizielles Portal",
+        hamagmDesc: "Entdecke herzerwärmende Tierclips, Technik-Unboxings und ausgewählte Produkte!<br><em>\"Ha! Making animals great, and the age a little better.\"</em>",
+        hamagmBtn: "🌐 Zu HAMAGM wechseln ➔",
+        lazyLifeTitle: "lazy life. Markenportal",
+        lazyLifeDesc: "Keine großen Pläne – wir erforschen nur, wie man sich entspannt auflösen kann. Die Oase für Niedrigenergie-Überlebende.<br><em>\"No grand ambitions here—just discovering how to effortlessly devolve into liquid.\"</em>",
+        lazyLifeBtn: "🌐 Zu lazy life. wechseln ➔"
       },
       fr: {
         slogan: "🐾 Les règles de Franklin : Un Shorthair sarcastique chez les Washington.",
         boxTag: "😼 Le mot du Maître Chat (Actualisé à chaque visite)",
         bio: "🐾 \"Je n'ai pas de maître. J'autorise simplement les Washington à vivre sous mon toit.\"<br>Humour caustique, sketchs et équipements robustes. 👇",
+        socialYt: "📺 Série YouTube Shorts",
         marketTitle: "🐾 Le Marché CAT & WASHINGTON",
         marketDesc: "Des équipements approuvés par les pattes de Franklin pour le confort quotidien.",
         searchPlaceholder: "🔍 Rechercher un produit ou un sketch...",
         watchSkit: "🎬 Voir le sketch",
         viewAmazon: "Voir sur Amazon 🛒",
-        noMatch: "Aucun produit correspondant trouvé."
+        noMatch: "Aucun produit correspondant trouvé.",
+        tabs: {
+          all: "Tous les articles",
+          tech: "💻 High-Tech & Gaming",
+          apparel: "🧢 Mode & Vêtements",
+          care: "🦷 Soins personnels",
+          cat: "🐱 Essentiels pour Chat",
+          home: "🏠 Maison & Déco",
+          holiday: "🎃 Fêtes & Fun",
+          snack: "🍢 Snacks & Friandises"
+        },
+        hamagmTitle: "HAMAGM Portail Officiel",
+        hamagmDesc: "Découvrez des moments animaliers attachants, des unboxings tech et une boutique soignée !<br><em>\"Ha! Making animals great, and the age a little better.\"</em>",
+        hamagmBtn: "🌐 Visiter HAMAGM ➔",
+        lazyLifeTitle: "lazy life. Portail Officiel",
+        lazyLifeDesc: "Pas de grandes ambitions ici : découvrez l'art de fondre sans effort. Le repaire pour survivre en mode basse énergie.<br><em>\"No grand ambitions here—just discovering how to effortlessly devolve into liquid.\"</em>",
+        lazyLifeBtn: "🌐 Visiter lazy life. ➔"
       }
     };
 
@@ -740,9 +825,35 @@
       document.getElementById('txtCatQuote').textContent = quotes[selectedQuoteIndex % quotes.length];
       
       document.getElementById('txtBio').innerHTML = t.bio;
+      document.getElementById('socialYt').textContent = t.socialYt;
       document.getElementById('txtMarketTitle').textContent = t.marketTitle;
       document.getElementById('txtMarketDesc').textContent = t.marketDesc;
       document.getElementById('searchInput').placeholder = t.searchPlaceholder;
+
+      // 更新分類 Tabs 文字
+      if (t.tabs) {
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          const cat = btn.getAttribute('data-cat');
+          if (t.tabs[cat]) {
+            btn.textContent = t.tabs[cat];
+          }
+        });
+      }
+
+      // 更新合作推薦卡片文字
+      const hTitle = document.getElementById('txtHamagmTitle');
+      const hDesc = document.getElementById('txtHamagmDesc');
+      const hBtn = document.getElementById('btnHamagm');
+      if (hTitle && t.hamagmTitle) hTitle.textContent = t.hamagmTitle;
+      if (hDesc && t.hamagmDesc) hDesc.innerHTML = t.hamagmDesc;
+      if (hBtn && t.hamagmBtn) hBtn.textContent = t.hamagmBtn;
+
+      const lTitle = document.getElementById('txtLazyLifeTitle');
+      const lDesc = document.getElementById('txtLazyLifeDesc');
+      const lBtn = document.getElementById('btnLazyLife');
+      if (lTitle && t.lazyLifeTitle) lTitle.textContent = t.lazyLifeTitle;
+      if (lDesc && t.lazyLifeDesc) lDesc.innerHTML = t.lazyLifeDesc;
+      if (lBtn && t.lazyLifeBtn) lBtn.textContent = t.lazyLifeBtn;
 
       renderProducts();
     }
