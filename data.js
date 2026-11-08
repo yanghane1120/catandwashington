@@ -47,4 +47,21 @@ window.franklinProducts = [
     category: "apparel",
     tag: "TACTICAL GEAR",
     title: "NORTIV 8 Men's Military Tactical Work Boots",
-    searchTerms: "nortiv 8 tactical boots
+    searchTerms: "nortiv 8 tactical boots military work boots secret weapon 戰術靴 軍靴 工作靴 lawrence washington franklin",
+    amazonUrl: "https://link.amazon/B00HGC5RX",
+    videoId: "VHOD_kviJH0",
+    videoTitle: "The SECRET weapon George Washington gave his brother... 👀"
+  },
+  {
+    id: "franklin-xiaobi-useless-notebook",
+    category: "holiday",
+    tag: "GAG JOURNAL",
+    title: "The Little White Rabbit's Useless Notebook: A Sarcastic Gag Journal for Overwhelmed Humans, Students, and Burnout Office Workers (Funny Novelty Notebook)",
+    searchTerms: "little white rabbit useless notebook sarcastic gag journal burnout office workers 小比兔 廢物筆記本 厭世 幽默 筆記本 franklin cat humming",
+    amazonUrl: "https://link.amazon/B0j2pgrp5",
+    videoId: "Yc1To2QN6qk",
+    videoTitle: "Bro told his cat to stop humming, then saw THIS 💀"
+  }
+];
+
+console.log("🐱 CAT & WASHINGTON data.js 載入成功！共 " + window.franklinProducts.length + " 筆資料。");
