@@ -4,7 +4,7 @@
 window.franklinProducts = [
   {
     id: "franklin-stanley-tumbler-40oz",
-    category: "tech", // 分類：tech (科技與電競), apparel (服飾與穿戴), care (個人護理), cat (貓咪必備), home (居家生活), holiday (節慶與趣味), snack (點心零食)
+    category: "tech",
     tag: "DESK DISTRACTIONS",
     title: "STANLEY Quencher H2.0 Flow State Tumbler, 40 oz, Rose Quartz 2.0",
     searchTerms: "stanley tumbler quencher 40oz rose quartz cup mug franklin coffee 水杯 保溫杯",
