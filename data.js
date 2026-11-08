@@ -47,11 +47,4 @@ window.franklinProducts = [
     category: "apparel",
     tag: "TACTICAL GEAR",
     title: "NORTIV 8 Men's Military Tactical Work Boots",
-    searchTerms: "nortiv 8 tactical boots military work boots secret weapon 戰術靴 軍靴 工作靴 lawrence washington franklin",
-    amazonUrl: "https://link.amazon/B00HGC5RX",
-    videoId: "VHOD_kviJH0",
-    videoTitle: "The SECRET weapon George Washington gave his brother... 👀"
-  }
-];
-
-console.log("🐱 CAT & WASHINGTON data.js 載入成功！共 " + window.franklinProducts.length + " 筆資料。");
+    searchTerms: "nortiv 8 tactical boots
